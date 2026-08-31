@@ -1,0 +1,34 @@
+NAME      := ex03
+CXX       := c++
+CXXFLAGS  := -Wall -Wextra -Werror -MMD -MP -std=c++98
+
+SRC_DIR   := .
+OBJ_DIR   := objects
+
+SRCS      := main.cpp Fixed.cpp Point.cpp
+OBJS      := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
+DEPS      := $(OBJS:.o=.d)
+
+.DELETE_ON_ERROR:
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $@
+	@echo "✅ Built $(NAME)"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJ_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+-include $(DEPS)

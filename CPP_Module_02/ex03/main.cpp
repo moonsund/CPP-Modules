@@ -96,8 +96,3 @@ std::cout
     << std::endl;
     return 0; 
 }
-
-
-
-// Чтобы выводить true и false, а не 1 и 0, перед циклом можно включить:
-// std::cout << std::boolalpha;

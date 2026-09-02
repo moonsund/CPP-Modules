@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 #include <iostream>
 
@@ -18,13 +19,14 @@ void displayCurrent(ClapTrap& name) {
 int main(void) {
     ClapTrap yorick("Yorick");
     displayCurrent(yorick);
-    ScavTrap Arminius("Arminius");
-
-    displayCurrent(Arminius);
-
-
+    ScavTrap arminius("Arminius");
+    displayCurrent(arminius);
+    FragTrap julius("Julius");
+    displayCurrent(julius);
 
     yorick.attack("Arminius");
-    Arminius.attack("Yorick");
-    Arminius.guardGate();
+    arminius.attack("Yorick");
+    julius.attack("Arminius");
+    julius.highFivesGuys();
+    arminius.guardGate();
 }

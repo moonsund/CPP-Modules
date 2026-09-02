@@ -9,7 +9,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "RIP ScavTrap warrior" << name_ <<std::endl;
+    std::cout << "RIP ScavTrap warrior " << name_ <<std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {

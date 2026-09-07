@@ -15,17 +15,22 @@ void displayCurrent(ClapTrap& name) {
 }
 
 int main(void) {
-    ClapTrap yorick("Yorick");
-    displayCurrent(yorick);
+    ClapTrap clap("Clap");
+    displayCurrent(clap);
+    std::cout << std::endl;
 
-    yorick.takeDamage(5);
-    displayCurrent(yorick);
-    yorick.beRepaired(5);
-    displayCurrent(yorick);
+    clap.takeDamage(5);
+    displayCurrent(clap);
+    std::cout << std::endl;
+    
+    clap.beRepaired(5);
+    displayCurrent(clap);
+    std::cout << std::endl;
 
     for (int i = 0; i < 9; i++) {
-        yorick.attack("Arminius");
+        clap.attack("Arminius");
     }
-    displayCurrent(yorick);
-    yorick.attack("Arminius");
+    displayCurrent(clap);
+    clap.attack("Arminius");
+    std::cout << std::endl;
 }

@@ -17,16 +17,22 @@ void displayCurrent(ClapTrap& name) {
 }
 
 int main(void) {
-    ClapTrap yorick("Yorick");
-    displayCurrent(yorick);
-    ScavTrap arminius("Arminius");
-    displayCurrent(arminius);
-    FragTrap julius("Julius");
-    displayCurrent(julius);
+    ClapTrap clap("Clap");
+    displayCurrent(clap);
+    std::cout << std::endl;
 
-    yorick.attack("Arminius");
-    arminius.attack("Yorick");
-    julius.attack("Arminius");
-    julius.highFivesGuys();
-    arminius.guardGate();
+    ScavTrap scav("Scav");
+    displayCurrent(scav);
+    std::cout << std::endl;
+
+    FragTrap frag("Frag");
+    displayCurrent(frag);
+
+    clap.attack("Scav");
+    scav.attack("Clap");
+    frag.attack("Scav");
+    std::cout << std::endl;
+    frag.highFivesGuys();
+    scav.guardGate();
+    std::cout << std::endl;
 }

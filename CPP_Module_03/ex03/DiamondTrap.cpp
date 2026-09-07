@@ -1,12 +1,30 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), name_(name) {
+DiamondTrap::DiamondTrap(const std::string& name) : 
+    ClapTrap(name + "_clap_name"), 
+    FragTrap(name), 
+    ScavTrap(name), 
+    name_(name) {
         hitPoints_ = 100;
         energyPoints_ = 50;
         attackDamage_ = 30;
         std::cout << "Great FragTrap and ScavTrap warriors "
                 << name_ 
                 << " were merged into a DiamondTrap warrior!" <<std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap& other) :
+    ClapTrap(other),
+    FragTrap(other),
+    ScavTrap(other),
+    name_(other.name_) {}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+        name_ = other.name_;
+    }
+    return *this;
 }
 
 DiamondTrap::~DiamondTrap() {

@@ -16,15 +16,17 @@ void displayCurrent(ClapTrap& name) {
 }
 
 int main(void) {
-    ClapTrap yorick("Yorick");
-    displayCurrent(yorick);
-    ScavTrap Arminius("Arminius");
+    ClapTrap clap("Clap");
+    displayCurrent(clap);
+    std::cout << std::endl;
 
-    displayCurrent(Arminius);
+    ScavTrap scav("Scav");
+    displayCurrent(scav);
+    std::cout << std::endl;
 
 
-
-    yorick.attack("Arminius");
-    Arminius.attack("Yorick");
-    Arminius.guardGate();
+    clap.attack("Scav");
+    scav.attack("Clap");
+    scav.guardGate();
+    std::cout << std::endl;
 }

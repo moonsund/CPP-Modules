@@ -6,10 +6,12 @@
 
 class ClapTrap {
     public:
-        ClapTrap(std::string name);
+        ClapTrap(const std::string& name);
+        ClapTrap(const ClapTrap& other);
+        ClapTrap& operator=(const ClapTrap& other);
         ~ClapTrap();
 
-        std::string getName(void) const;
+        const std::string& getName(void) const;
         unsigned int getHitPoints(void) const;
         unsigned int getEnergyPoints(void) const;
         unsigned int getAttackDamage(void) const;

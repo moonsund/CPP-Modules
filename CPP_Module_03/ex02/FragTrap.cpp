@@ -1,10 +1,19 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
     hitPoints_ = 100;
     energyPoints_ = 100;
     attackDamage_ = 30;
     std::cout << "Great ClapTrap warrior " << name_ << " was promoted to be a FlagTrap warrior!" <<std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {}
+
+FragTrap& FragTrap::operator=(const FragTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+    }
+    return *this;
 }
 
 FragTrap::~FragTrap() {

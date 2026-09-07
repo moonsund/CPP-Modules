@@ -7,6 +7,15 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
     std::cout << "Great ClapTrap warrior " << name_ << " was promoted to be a FlagTrap warrior!" <<std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {}
+
+FragTrap& FragTrap::operator=(const FragTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+    }
+    return *this;
+}
+
 FragTrap::~FragTrap() {
     std::cout << "RIP FlagTrap warrior " << name_ <<std::endl;
 }

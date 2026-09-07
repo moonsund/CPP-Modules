@@ -8,6 +8,15 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     std::cout << "Great ClapTrap warrior " << name_ << " was promoted to be a ScavTrap warrior!" <<std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);        
+    }
+    return *this;
+}
+
 ScavTrap::~ScavTrap() {
     std::cout << "RIP ScavTrap warrior " << name_ <<std::endl;
 }

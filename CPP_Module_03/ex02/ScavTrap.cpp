@@ -1,11 +1,20 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     hitPoints_ = 100;
     energyPoints_ = 50;
     attackDamage_ = 20;
     std::cout << "Great ClapTrap warrior " << name_ << " was promoted to be a ScavTrap warrior!" <<std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+    }
+    return *this;
 }
 
 ScavTrap::~ScavTrap() {

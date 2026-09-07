@@ -1,7 +1,23 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0) {
+ClapTrap::ClapTrap(const std::string& name) : name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0) {
     std::cout << "Great warrior " << name_ << " was born!" <<std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+    : name_(other.name_),
+      hitPoints_(other.hitPoints_),
+      energyPoints_(other.energyPoints_),
+      attackDamage_(other.attackDamage_) {}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+    if (this != &other) {
+        name_ = other.name_;
+        hitPoints_ = other.hitPoints_;
+        energyPoints_ = other.energyPoints_;
+        attackDamage_ = other.attackDamage_;        
+    }
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {

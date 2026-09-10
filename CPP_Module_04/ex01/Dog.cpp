@@ -30,3 +30,13 @@ Dog::~Dog() {
 void Dog::makeSound(void) const {
     std::cout << "Dog barks" <<std::endl;
 }
+
+void Dog::setIdea(int ndx, const std::string& idea) {
+    if (ndx >= 0 && ndx < 100) {
+        dogBrain_->setIdea(ndx, idea);
+    }
+}
+
+const std::string& Dog::getIdea(int ndx) const {
+    return dogBrain_->getIdea(ndx);
+}

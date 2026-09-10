@@ -5,7 +5,7 @@ CXXFLAGS  := -Wall -Wextra -Werror -MMD -MP -std=c++98
 SRC_DIR   := .
 OBJ_DIR   := objects
 
-SRCS      := main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS      := main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS      := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 DEPS      := $(OBJS:.o=.d)
 

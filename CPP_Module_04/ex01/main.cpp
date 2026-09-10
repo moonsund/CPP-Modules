@@ -1,37 +1,38 @@
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 #include <iostream>
 
 int main(void) {
-    Animal* animals[2];
+    Animal* animals[4];
     animals[0] = new Dog();
     animals[1] = new Cat();
-    Animal* meta = new Animal();
-    WrongAnimal* wrongAnimal = new WrongCat();
+    animals[2] = new Cat();
+    animals[3] = new Dog();
     std::cout << std::endl;
+
+    Cat first;
+    first.makeSound();
+    first.setIdea(0, "I love milk");
+    Cat second(first);
+    second.makeSound();
+    std::cout << second.getIdea(0) << std::endl;
 
     std::cout << animals[0]->getType() << " " << std::endl; 
     std::cout << animals[1]->getType() << " " << std::endl;
-    std::cout << wrongAnimal->getType() << " " << std::endl;
-    std::cout << meta->getType() << " " << std::endl;
+
     std::cout << std::endl;
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 4; i++) {
         animals[i]->makeSound();
     }
-    wrongAnimal->makeSound();
-    meta->makeSound();
+
     std::cout << std::endl;
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 4; ++i) {
         delete animals[i];
     }
-    delete wrongAnimal;
-    delete meta;
 
     return 0;
 }

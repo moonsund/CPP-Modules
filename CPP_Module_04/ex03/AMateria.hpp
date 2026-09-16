@@ -7,7 +7,7 @@
 
 class AMateria {
     protected:
-    std::string type_;
+        std::string type_;
             
     public:
         AMateria(const std::string& type);
@@ -19,7 +19,5 @@ class AMateria {
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 };
-
-
 
 #endif

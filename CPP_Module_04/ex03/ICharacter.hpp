@@ -1,9 +1,9 @@
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
-
-#include "AMateria.hpp"
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
 #include <string>
+
+class AMateria;
 
 class ICharacter {
     public:

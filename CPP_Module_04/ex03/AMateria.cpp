@@ -7,13 +7,15 @@ AMateria::AMateria(const AMateria& other) {
 }
 
 AMateria& AMateria::operator=(const AMateria& other) {
-    (void)other;
+    if (this != &other) {
+        type_ = other.type_;
+    }
     return *this;
 }
 
 AMateria::~AMateria() {}
 
-const std::string& AMateria::getType() const { //Returns the materia type
+const std::string& AMateria::getType() const {
     return type_;
 }
 

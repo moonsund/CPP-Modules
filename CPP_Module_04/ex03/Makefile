@@ -1,11 +1,11 @@
-NAME      := ex02
+NAME      := ex03
 CXX       := c++
 CXXFLAGS  := -Wall -Wextra -Werror -MMD -MP -std=c++98
 
 SRC_DIR   := .
 OBJ_DIR   := objects
 
-SRCS      := main.cpp AMateria.cpp Ice.cpp Cure.cpp
+SRCS      := main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp ICharacter.cpp IMateriaSource.cpp MateriaSource.cpp 
 OBJS      := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 DEPS      := $(OBJS:.o=.d)
 

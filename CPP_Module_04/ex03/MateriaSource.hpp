@@ -11,11 +11,11 @@ class MateriaSource : public IMateriaSource {
 
     public:
         MateriaSource();
-        MateriaSource(const IMateriaSource& other);
-        MateriaSource& operator=(const IMateriaSource& other);
-        ~MateriaSource() {}
-        void learnMateria(AMateria* materia) = 0;
-        AMateria* createMateria(const std::string& type) = 0;
+        MateriaSource(const MateriaSource& other);
+        MateriaSource& operator=(const MateriaSource& other);
+        ~MateriaSource();
+        void learnMateria(AMateria* materia);
+        AMateria* createMateria(const std::string& type);
 
 };
 

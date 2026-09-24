@@ -10,18 +10,27 @@ MateriaSource::MateriaSource(const MateriaSource& other) : IMateriaSource(other)
     for (int i = 0; i < 4; i++) {
         if (other.storage_[i] != 0)
             storage_[i] = other.storage_[i]->clone();
+        else
+            storage_[i] = 0;
     }
 };
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
     if (this != &other) {
         for (int i = 0; i < 4; i++) {
-            if (storage_[i] != 0) {
-                delete storage_[i];
+            if (other.storage_[i] != 0) {
+                AMateria* tmp = other.storage_[i]->clone();
+                if (storage_[i] != 0) {
+                    delete storage_[i];
+                }
+                storage_[i] = tmp;
+            }
+            else {
+                if (storage_[i] != 0) {
+                    delete storage_[i];
+                }
                 storage_[i] = 0;
             }
-            if (other.storage_[i] != 0)
-                storage_[i] = other.storage_[i]->clone();
         }
     }
     return *this;
@@ -54,4 +63,5 @@ AMateria* MateriaSource::createMateria(const std::string& type) {
             return clone;
         }
     }
+    return 0;
 };

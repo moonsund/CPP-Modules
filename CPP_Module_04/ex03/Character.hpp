@@ -20,6 +20,7 @@ class Character : public ICharacter {
         void equip(AMateria* materia);
         void unequip(int index);
         void use(int index, ICharacter& target);
+        AMateria* getMateriaAddress(int index) const;
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
+#include <iostream>
 
 class MateriaSource : public IMateriaSource {
     private:

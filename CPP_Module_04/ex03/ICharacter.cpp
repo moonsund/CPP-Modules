@@ -12,3 +12,4 @@ ICharacter& ICharacter::operator=(const ICharacter& other) {
 }
 
 ICharacter::~ICharacter() {}
+

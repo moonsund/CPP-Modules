@@ -17,6 +17,4 @@ class Ice : public AMateria {
         void use(ICharacter& target);
 };
 
-
-
 #endif

@@ -18,3 +18,4 @@
 
 # Ignore the project executable (root binary only)
 *.out
+/CPP_Module_*/ex[0-9][0-9]/ex[0-9][0-9]
